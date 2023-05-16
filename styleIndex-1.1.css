@@ -1,0 +1,123 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');* {
+    box-sizing: border-box;
+    font-family:'Lato','Serif','Times New Roman', Times, serif;
+    font-weight: 500;
+}
+
+body {
+    /* BACKGROUND_COLOR */
+    background-color: #fdfdfd;
+    /* SPACE BETWEEN THE OBJECT AND THE OTHER OBJECT (in this case the sides of our screen or web browser display) */
+    margin: 0;
+    padding: 0;
+    /* flex wrap */
+    flex-wrap: wrap;
+}
+
+.navigationBar {
+    /* TEXT COLOR */
+    color: #fdfdfd;
+    /* BACKGROUND_COLOR */
+    background-color: #141b4d;
+    /* PADDING START */
+    /* DISTANCE CONTENT IS FROM BOARDER */
+    padding: 2%;
+    /* PADDING END */
+
+    /* FLEX BOX */
+    /* display */
+    display: flex;
+    /* where content should be placed * amount of space */
+    justify-content: space-between;
+    align-items: center;
+    /* FLEX BOX END */
+
+}
+
+.header,
+.section {
+    display: flex;
+    flex-direction: column;
+    /* PADDING START */
+    /* DISTANCE CONTET IS FROM BOARDER */
+    /* top & bottom || all sides (!LEFT&!RIGHT)*/
+    padding: 2.5%;
+    /* left */
+    padding-left: 5%;
+    /* right */
+    padding-right: 5%;
+    /* PADDING END */
+
+    /* oppacity */
+    opacity: .95;
+    align-items: center;
+}
+
+#menuIconPart {
+    width: 17.5px;
+    height: 2.5px;
+    background-color: #fdfdfd;
+    margin: 2.5px 0;
+}
+
+.header .TXT,
+.section .TXT,
+{
+    display: flex;
+    justify-content: center;
+}
+
+.title {
+    font-size: 1.5rem;
+    margin: .5rem;
+}
+
+.burgerIcon {
+    /* position: absolute; */
+    display: none;
+    justify-content: space-between;
+}
+
+#deskTopLinks a {
+    color: #fdfdfd;
+    text-decoration: none;
+    padding: 1rem;
+    display: block;
+    width: max-content;
+}
+
+#deskTopLinks {
+    display: flex;
+}
+
+@media(max-width: 600px) {
+    .burgerIcon {
+        display: flex;
+        padding-left: 1rem;
+    }
+
+    #deskTopLinks {
+        display: none;
+    }
+}
+
+.right {
+    padding: .5rem 1rem;
+}
+.floor-img{
+    width: 50%;
+    display: flex;
+}
+.photo-grid-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+.photo-grid-item{
+    display: flex;
+    border-style: dotted;
+    justify-content: center;
+
+}

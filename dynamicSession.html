@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Dynamic Session Creation Basis</title>
+    </head>
+    <body>
+        <!-- UI HERE -->
+        <button id="parse" onclick="parse()">Parse CSV</button>
+        <script
+            src="https://cdn.jsdelivr.net/npm/papaparse@5.4.0/papaparse.min.js">
+        </script>
+        <script>
+            function parse(){
+                Papa.parse("MOCK_DATA1.0.csv",
+                        {
+                        download: true,
+                        header: true,
+                        skipEmptyLines: true,
+                        complete: function(results){
+                            console.log(results);
+                            var iDiv = document.createElement('div');
+                            iDiv.id = 'block';
+                            iDiv.className = 'block';
+                            document.body.appendChild(iDiv);
+                            // results.data[0][0] = "I am results[0]";
+                            // iDiv.innerHTML = results.data[0].id[0];
+                            console.log("results.length: "+results.data.length);
+                            for (let index = 0; index < results.data.length; index++) {
+                                const element = results.data[index].id;
+                                var div = document.createElement('div');
+                                div.id = 'container';
+                                div.innerHTML = element;
+                                div.className = 'border pad';
+                            
+                                document.body.appendChild(div);
+
+                                console.log("index: "+index + "; results.data[index].id[0]: " + results.data[index].id[0]);
+                            }
+                         
+                        }     
+                    });
+            }
+            </script>
+       
+    </body>
+</html>

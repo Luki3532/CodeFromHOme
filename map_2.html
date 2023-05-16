@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styleMenu-1.0.css">
+    <link rel="stylesheet" href="styleIndex-1.1.css">
+    <title>BTSU Website v1.1 - map-2.0</title>
+</head>
+
+<body>
+
+    <!-- container -->
+    <div class="navigationBar CNTNR">
+        <!-- START HAMBURGER MENU -->
+        <!-- left side of navigation bar, this will be our menu button that opens out menu -->
+        <div class="burgerIcon CNTNR">
+            <!-- The overlay -->
+            <div id="myNav" class="overlay">
+
+                <!-- Button to close the overlay navigation -->
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+                <!-- Overlay content -->
+                <div class="overlay-content">
+                    <a href="index.html" class="TXT">Home</a>
+                    <a href="#" class="TXT">Find Sessions</a>
+                    <a href="#" class="TXT">RHS Map</a>
+                    <a href="about_students.html" class="TXT">Student
+                        Creators</a>
+                </div>
+
+            </div>
+
+            <!-- Use any element to open/show the overlay navigation menu -->
+            <span onclick="openNav()">
+                <div id="menuIconPart"></div>
+                <div id="menuIconPart"></div>
+                <div id="menuIconPart"></div>
+            </span>
+
+            <script>
+                function openNav() {
+                    document.getElementById("myNav").style.width = "100%";
+                }
+
+                function closeNav() {
+                    document.getElementById("myNav").style.width = "0%";
+                }
+            </script>
+        </div>
+        <!-- END HAMBURGER MENU -->
+
+        <!-- when the scren size is MOBILE then we want to remove the links and add the Hamburger Menu -->
+        <div id="deskTopLinks">
+            <a href="index.html" class="TXT">Home</a>
+            <a href="#" class="TXT">Find Sessions</a>
+            <a href="#" class="TXT">RHS Map</a>
+            <a href="about_students.html" class="TXT">Student Creators</a>
+        </div>
+        <!-- our register button goes here THE MOST IMPORTANT FEATURE -->
+        <!-- container for item Flex Justify-content right -->
+        <div class="right CNTNR">
+            <div class="register TXT ">Welcome</div>
+        </div>
+    </div>
+    <!-- end of container -->
+
+    <!-- end of navigation bar here! -->
+
+    <!-- header here. Here The title is the largest TXT Element here and the date goes right above the title as a little note -->
+    <div class="header CNTNR">
+        <!-- the date of the event -->
+        <div class="date TXT">DATE</div>
+
+        <!-- the name of the event -->
+        <div class="title map TXT">MAP</div>
+    </div>
+    <!-- header ends here -->
+
+    <!-- now sections of information MEAT&POTATOS: -->
+
+    <!-- NAME section starts -->
+    <div class="section CNTNR">
+        <!-- the title of the section -->
+        <div class="sectionTitle TXT">Riley Floor Map</div>
+
+        <!-- section details -->
+        <div class="sectionDetails TXT">SECTION_details</div>
+
+        <!-- Section content -->
+        <div class='photo-grid-container'>
+            <div class='photo-grid'>
+                <div class='photo-grid-item first-item'>
+                    <!-- <div class="section-part-title floor-level TXT">First Floor</div> -->
+                    <img class="floor-img" src='map_images/first_floor.png' id="one" onclick = "getClickedId('one')"/>
+                    <!-- <button onclick="resetImg()">Reset</button> -->
+                </div>
+                <div class='photo-grid-item'>
+                    <!-- <div class="section-part-title floor-level TXT">Second Floor</div> -->
+                    <img class="floor-img" src='map_images/second_floor.png'  id="two" onclick = "getClickedId('two')"/>
+                </div>
+                <div class='photo-grid-item'>
+                    <img class="floor-img" src='map_images/third_floor.png'  id="three" onclick = "getClickedId('three')"/>
+                </div>
+                <!-- <div class='photo-grid-item last-item'>
+                    <img class="floor-img" src='map_images/fourth_floor.png' id="four" onclick = "getClickedId('four')" />
+                </div> -->
+
+            </div>
+        </div>
+    </div>
+    <!-- end of section NAME -->
+    <script>
+
+        // enlarge 1st map picture
+
+        // Get the img object using its Id
+        var val = false;
+        var imgModId;
+
+        console.log("val is false");
+        function getClickedId(id){
+            // if the thing is clicked then return that elements id 
+                
+                img1 = document.getElementById("one");
+                img2 = document.getElementById("two");
+                img3 = document.getElementById("three");
+
+                // bigSmallImg(img)
+
+                if (id == "one"){
+                    console.log("id == one seting scale of ID to 1.5")
+                    // id.style.transform = "scale(1.5)";
+                    // id.style.scale = 1.5;
+                    enlargeImg(img1)
+                    resetImg(img2)
+                    resetImg(img3)
+
+                    //make 1 big
+                    //make 2 small
+                    //make 3 small
+                    
+                } else if (id == "two"){
+                    console.log("id == two seting scale of ID to 1.5")
+                    enlargeImg(img2)
+                    resetImg(img1)
+                    resetImg(img3)
+                    //make 1 small
+                    //make 2 big
+                    //make 3 small
+                } else if (id == "three"){
+                    console.log("id == three seting scale of ID to 1.5")
+                    enlargeImg(img3)
+                    resetImg(img1)
+                    resetImg(img2)
+
+                    //make 1 and 2 small
+                    //make 3 big
+                }
+
+            }
+
+
+        // Function to increase image size
+        function enlargeImg(image_id) {
+            // Set image size to 1.5 times original
+            image_id.style.transform = "scale(1.5)";
+            image_id.style.scale = 1.5;
+            // Animation effect
+            image_id.style.transition = "transform 0.25s ease";
+
+            console.log("Img enlarge setting value to TRUE");
+
+        }
+        // Function to reset image size
+        function resetImg(image_id) {
+            // Set image size to original
+            image_id.style.transform = "scale(1)";
+            image_id.style.scale = 1;
+
+            image_id.style.transition = "transform 0.25s ease";
+
+            val = false
+            console.log("Image Reset VAL IS NOW FALSE");
+
+        }
+        // var el = document.getElementById("1st");
+
+        console.log("The element transform is:"+ img.style.transform);
+
+        function bigSmallImg(image_id){
+            console.log("The element scale is:"+ image_id.style.scale)
+            if(image_id.style.scale === 1.5){
+                console.log("image reset")
+                resetImg(image_id); 
+            } else {
+                resetImg()
+                enlargeImg(image_id);
+            }
+        }
+
+    </script>
+   
+
+</body>
+
+</html>

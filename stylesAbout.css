@@ -1,0 +1,66 @@
+body{
+    background-color: whitesmoke;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.about_lucas{
+    display: flex;
+    margin: 20px;
+}
+
+.placeholder-image{
+    display: flex;
+    margin: 10px;
+    flex-direction: row;
+}
+
+.photo{
+    display: flex;
+    margin: 10px;
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* max-width: 100;
+    flex-flow: row nowrap;
+    align-items: center; */
+}
+
+img { 
+    width: 100%
+}
+
+.lucas_container{
+    display: flex;
+    flex-direction: row;
+}
+.about_abby{
+    display: flex;
+    margin: 20px;
+}
+
+.abby_container{
+    display: flex;
+    flex-direction: row;
+}
+
+.tiffany_container{
+    display: flex;
+    flex-direction: row;
+}
+.about_tiffany{
+    display: flex;
+    margin: 20px;
+}
+
+.about_mshaubold{
+    display: flex;
+    margin: 20px;
+}
+
+.mshaubold_container{
+    display: flex;
+    flex-direction: row;
+}

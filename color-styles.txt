@@ -1,0 +1,11 @@
+Blue        #182350 STANDARD: #141b4d
+White       #fdfdfd
+Grey        #c5c7d4
+Grey-Dark   #787e9b
+Yellow      #f8cf3f STANDARD: #fed141
+Yellow-Dark #d4b342
+Red         #b3303f STANDARD: #a6192e
+Grey        #31364c
+
+Original Overlay a color:   #818181
+Highlighted:                #f1f1f1
